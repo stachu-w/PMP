@@ -1,0 +1,75 @@
+# Java Projekt s Gradle - Hodnocení prospěchu
+
+Tento projekt slouží jako ukázka práce s jednoduchou logikou hodnocení studentů, generování číselných vzorků a základního porovnávání. Využívá Gradle jako buildovací nástroj a JUnit 5 pro testování.
+
+## Struktura projektu
+
+```
+├── build.gradle.kts        # Konfigurace Gradle
+├── settings.gradle.kts     # Nastavení projektu
+├── README.md               # Dokumentace projektu
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── cz
+│   │           └── kocaro03
+│   │               ├── Main.java
+│   │               ├── VyhodnoceniProspechu.java
+│   │               ├── Zpracovani.java
+│   │               └── ZpracovaniMoje.java
+│   └── test
+│       └── java
+│           └── cz
+│               └── kocaro03
+│                   ├── VyhodnoceniProspechuTest.java
+│                   ├── ZpracovaniTest.java
+│                   └── ZpracovaniMojeTest.java
+```
+
+## Spuštění projektu
+
+### 1. V IntelliJ IDEA
+- Otevři složku projektu v IntelliJ IDEA.
+- Ujisti se, že je projekt nastaven jako Gradle projekt.
+- Klikni pravým tlačítkem na složku `src/test/java` a zvol `Run Tests`.
+
+### 2. V příkazové řádce
+```bash
+./gradlew test       # Linux / macOS
+# nebo
+gradlew.bat test     # Windows
+```
+
+## Popis tříd
+
+### `VyhodnoceniProspechu`
+- `prospech(int[] znamky)`: Vrací slovní hodnocení (např. "výborně") podle průměru známek.
+- `prumer(int[] znamky)`: Vypočítá průměr z pole známek.
+
+### `Zpracovani`
+- `interval(int odkud, int kam, int value)`: Zjistí, zda je hodnota v intervalu.
+- `vzorkySestupně(double odkud, double kam, double krok)`: Vygeneruje pole čísel od `odkud` po `kam` (sestupně) s daným krokem.
+
+### `ZpracovaniMoje`
+- `comp(int a, int b)`: Porovná dvě čísla, vrací -1, 0 nebo 1.
+- `comp(String a, String b)`: Porovná dva řetězce podle abecedy.
+
+## Testy
+Testovací třídy ověřují funkčnost všech metod a pokrývají různé případy včetně chybových vstupů.
+
+### `VyhodnoceniProspechuTest`
+Testuje správnost výpočtu průměru a přiřazení slovního hodnocení.
+
+### `ZpracovaniTest`
+Testuje, zda metoda správně určuje, kdy hodnota spadá do intervalu, a zda generuje správné číselné vzorky.
+
+### `ZpracovaniMojeTest`
+Testuje srovnávání čísel a řetězců.
+
+## Umístění README
+Tento soubor `README.md` patří do kořenového adresáře projektu (na stejné úrovni jako `build.gradle.kts`).
+
+## Autor
+Projekt vytvořen pro výukové účely, 2025. Autor: Karolína Kočařová, Martin Dočekal
+
+
