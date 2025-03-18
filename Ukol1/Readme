@@ -1,7 +1,6 @@
 # Java Projekt s Gradle - Hodnocení prospěchu
 
-Tento projekt slouží jako ukázka práce s jednoduchou logikou hodnocení studentů, generování číselných vzorků a základního porovnávání. Využívá Gradle jako buildovací nástroj a JUnit 5 pro testování.
-
+Tento projekt slouží jako ukázka práce s jednoduchou logikou hodnocení studentů, generování číselných vzorků a základního porovnávání. Využívá Gradle jako buildovací nástroj a JUnit 5 pro testování. Kód je formátován pomocí Google Java Formatteru pro zajištění konzistence a čitelnosti.
 ## Struktura projektu
 
 ```
@@ -32,6 +31,14 @@ Tento projekt slouží jako ukázka práce s jednoduchou logikou hodnocení stud
 - Otevři složku projektu v IntelliJ IDEA.
 - Ujisti se, že je projekt nastaven jako Gradle projekt.
 - Klikni pravým tlačítkem na složku `src/test/java` a zvol `Run Tests`.
+
+## Formátování kódu
+Projekt používá Google Java Formatter pro automatické formátování kódu. Formátování lze provést:
+- V IntelliJ IDEA pomocí klávesové zkratky Ctrl + Alt + L (Windows/Linux) nebo Cmd + Option + L (macOS).
+- V příkazové řádce pomocí nástroje Google Java Format:
+```bash
+java -jar google-java-format-1.15.0-all-deps.jar --replace src/**/*.java
+```
 
 ### 2. V příkazové řádce
 ```bash
@@ -64,12 +71,12 @@ Testuje správnost výpočtu průměru a přiřazení slovního hodnocení.
 Testuje, zda metoda správně určuje, kdy hodnota spadá do intervalu, a zda generuje správné číselné vzorky.
 
 ### `ZpracovaniMojeTest`
-Testuje srovnávání čísel a řetězců.
+Testuje srovnávání čísel a řetězců. Aj.
 
 ## Umístění README
 Tento soubor `README.md` patří do kořenového adresáře projektu (na stejné úrovni jako `build.gradle.kts`).
 
 ## Autor
-Projekt vytvořen pro výukové účely, 2025. Autor: Karolína Kočařová, Martin Dočekal
+Projekt vytvořen pro výukové účely, 2025. Autoři: Karolína Kočařová, Martin Dočekal
 
 

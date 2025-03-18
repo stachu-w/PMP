@@ -1,5 +1,9 @@
+import org.gradle.api.tasks.javadoc.Javadoc
+import org.gradle.external.javadoc.StandardJavadocDocletOptions
+
 plugins {
-    id("java")
+    java
+    id("com.diffplug.spotless") version "6.25.0"
 }
 
 group = "cz.kocaro03"
@@ -18,5 +22,15 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
+tasks.register<Jar>("javadocJar") {
+    dependsOn(tasks.javadoc)
+    archiveClassifier.set("javadoc")
+    from(tasks.javadoc.get().destinationDir)
+}
 
-
+tasks.withType<Javadoc>().configureEach {
+    (options as? StandardJavadocDocletOptions)?.let {
+        it.encoding = "UTF-8"
+        it.addStringOption("Xdoclint:none", "-quiet")
+    }
+}
